@@ -1,0 +1,11 @@
+service: lambda-performance-benchmark
+provider:
+  name: aws
+  runtime: python2.7
+  memorySize: 512
+  timeout: 100
+
+functions:
+  main:
+    handler: fibonacci.handler
+    description: "Performance Benchmark"
