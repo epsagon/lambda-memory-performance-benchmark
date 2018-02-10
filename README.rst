@@ -4,7 +4,7 @@ AWS Lambda Memory Performance Benchmark
 Motivation
 ----------
 - Understand how RAM selection affect Lambda's performance.
-- `Share insights on a blog post on Medium <https://medium.com/epsagon/its-all-about-the-ram-lambda-performance-benchmark-be6ebc41f0fc>`_.
+- `Share insights on a blog post on Medium <https://medium.com/epsagon/how-to-make-lambda-faster-memory-performance-benchmark-be6ebc41f0fc>`_.
 
 
 Setup
