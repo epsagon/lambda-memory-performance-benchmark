@@ -3,8 +3,8 @@ AWS Lambda Memory Performance Benchmark
 
 Motivation
 ----------
-- Understand how RAM selection affect Lambda's performance.
-- `Share insights on a blog post on Medium <https://medium.com/epsagon/how-to-make-lambda-faster-memory-performance-benchmark-be6ebc41f0fc>`_.
+- Understand how RAM selection affect Lambda's performance (on `Medium <https://medium.com/epsagon/how-to-make-lambda-faster-memory-performance-benchmark-be6ebc41f0fc>`_).
+- Code a tool that measures Lambda function performance (duration and cost) with several memory sizes.
 
 
 Setup
@@ -14,15 +14,25 @@ Setup
     git clone git@github.com:epsagon/lambda-memory-performance-benchmark.git
     cd lambda-memory-performance-benchmark/
     pip install -r requirements.txt
-    python benchmark.py
+    python benchmark.py -f <function_name> -r <function_region> -p <payload_filename>
 
 
-Last Result (February 9th, 2018)
+Usage
+-----
+
+Basic run:
+
+.. code-block:: bash
+
+    python benchmark.py -f lambda-performance-benchmark -r us-east-1 -p fibonacci-function/payload.json
+
+
+Fibonacci's Last Result (February 9th, 2018)
 --------------------------------
 
 Chart:
 
-.. image:: https://github.com/epsagon/lambda-memory-performance-benchmark/blob/master/performance_chart.png
+.. image:: https://github.com/epsagon/lambda-memory-performance-benchmark/blob/master/fibonacci-function/performance_chart.png
 
 
 Table:
