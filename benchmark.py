@@ -112,7 +112,7 @@ def run_benchmark(args):
         output_results.write(CSV_HEADER)
         for memory_size in sorted_memory_sizes:
             price = math.ceil(results[memory_size] / PRICE_INTERVAL) \
-                    * PRICE_INTERVAL * MEMORY_TO_PRICE[memory_size] * 1000000
+                    * MEMORY_TO_PRICE[memory_size] * 1000000
 
             output_results.write('{0},{1},{2}\n'.format(
                 '{0}MB'.format(memory_size),
