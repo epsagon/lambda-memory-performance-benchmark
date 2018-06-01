@@ -60,7 +60,12 @@ def run_benchmark(args):
     :return: None.
     """
 
-    lambda_client = boto3.client('lambda', region_name=args.region)
+    if args.aws_profile:
+        aws_session = boto3.Session(profile_name=args.aws_profile)
+    else:
+        aws_session = boto3.Session()
+
+    lambda_client = aws_session.client('lambda', region_name=args.region)
     sorted_memory_sizes = sorted(MEMORY_TO_PRICE)
     results = {}
 
@@ -150,6 +155,13 @@ if __name__ == '__main__':
         default=False,
         required=True,
         help='JSON Payload filename to send to the function.'
+    )
+    parser.add_argument(
+        '--profile',
+        dest='aws_profile',
+        default=False,
+        required=False,
+        help='A specific AWS Named Profile configured within your AWS Credentials file.'
     )
     parser.add_argument(
         '--output',
